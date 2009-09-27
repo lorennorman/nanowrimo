@@ -1,0 +1,19 @@
+- content_for(:title_h1, "Editng #{@book.title} Journal: #{@journal.title}")
+
+%p= link_to "Back to #{@book.title} overview", @book
+
+- form_for([@book, @journal]) do |f|
+  = f.error_messages
+  
+  %p
+    = f.label :title 
+    %br
+    = f.text_field :title
+    
+  %p
+    = f.label :content 
+    %br
+    = f.text_area :content
+  
+  %p
+    = f.submit 'Update'

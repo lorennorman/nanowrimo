@@ -1,7 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+
   map.root :controller => "index"
 
-  map.resources :books
+  map.resources :books, :has_many => :journals
 
   # The priority is based upon order of creation: first created -> highest priority.
 

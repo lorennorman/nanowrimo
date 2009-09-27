@@ -1,0 +1,18 @@
+- content_for(:title_h1, "Book: #{@book.title}")
+
+%p= link_to 'Back to Books index', books_path
+
+.book_info
+  .journals
+    %h2 Journals:
+    
+    = link_to "Create new Journal...", new_book_journal_path(@book)
+
+    %ul
+      - @book.journals.each do |journal|
+        %li= link_to h(journal.title), [@book, journal]
+        
+  .chapters
+    %h2 Chapters:
+    
+    %p Not allowed until November 1!

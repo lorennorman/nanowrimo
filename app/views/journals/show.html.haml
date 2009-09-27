@@ -1,0 +1,8 @@
+- content_for(:title_h1, "#{@book.title} Journal: #{@journal.title}")
+
+%p= link_to "Back to #{@book.title} overview", @book
+%p= link_to 'Edit this Journal', edit_book_journal_path(@book, @journal)
+
+.journal_content
+  =h @journal.content
+  = "( journal empty )" if @journal.content.blank?
