@@ -2,7 +2,10 @@
 %html
   %head
     %title= yield(:title_tag) || yield(:titles) || AppConstants::TITLE
+
     = javascript_include_tag :all
+    = yield(:head_js)
+    
     = stylesheet_link_tag :all
 
   %body.container_12

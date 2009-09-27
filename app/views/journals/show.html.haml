@@ -4,5 +4,5 @@
 %p= link_to 'Edit this Journal', edit_book_journal_path(@book, @journal)
 
 .journal_content
-  =h @journal.content
+  = @journal.content
   = "( journal empty )" if @journal.content.blank?
