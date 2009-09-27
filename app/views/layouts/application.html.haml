@@ -1,12 +1,13 @@
 !!!
 %html
   %head
-    %title= content_for(:title_tag) || content_for(:titles) || AppConstants::TITLE
+    %title= yield(:title_tag) || yield(:titles) || AppConstants::TITLE
     = javascript_include_tag :all
     = stylesheet_link_tag :all
+
   %body.container_12
     #header.grid_12
-      %h1= content_for(:title_h1) || content_for(:titles) || AppConstants::TITLE
+      %h1= yield(:title_h1) || yield(:titles) || AppConstants::TITLE
       
     #content.grid_10.prefix_1.suffix_1
       = yield(:layout)
