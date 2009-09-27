@@ -1,0 +1,10 @@
+- content_for(:title_h1, "Books")
+
+= link_to "Create a New Book...", new_book_path
+
+%fieldset
+  %legend Books in Progress:
+  
+  %ul
+    - @books.each do |book|
+      %li= link_to h(book.title), book
